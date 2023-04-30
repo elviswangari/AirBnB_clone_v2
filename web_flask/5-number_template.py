@@ -38,9 +38,10 @@ def number(n):
     return "{:d} is a number".format(n)
 
 
-@app.route('/number_template/<int:n>')
+@app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
-    return render_template("5-number.html" n=n)
+    """serve fom template"""
+    return render_template("5-number.html", n=n)
 
 
 if __name__ == "__main__":
